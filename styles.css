@@ -1,0 +1,1853 @@
+/* ==========================================================================
+   12th Berlin Biennale for Contemporary Art — Design System Styles
+   Theme: Iris-and-ink broadsheet — violet skies over monumental black type on white paper
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-iris-violet: #7373ff;
+  --color-deep-iris: #23234d;
+  --color-obsidian: #000000;
+  --color-paper-white: #ffffff;
+  --color-ash-gray: #f2f2f2;
+  --color-mist-gray: #e7e7e7;
+
+  /* Typography — Font Families */
+  --font-abcmonumentgrotesk: 'ABCMonumentGrotesk', 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-bradfordll: 'BradfordLL', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  /* Typography — Scale */
+  --text-caption: 12px;
+  --leading-caption: 1.16;
+  --tracking-caption: 0.12px;
+  --text-body-sm: 14px;
+  --leading-body-sm: 1.25;
+  --text-body-lg: 17px;
+  --leading-body-lg: 1.22;
+  --text-subheading: 19px;
+  --leading-subheading: 1.22;
+  --text-heading-sm: 22px;
+  --leading-heading-sm: 1.08;
+  --text-heading: 25px;
+  --leading-heading: 1.06;
+  --text-heading-lg: 29px;
+  --leading-heading-lg: 1.04;
+  --text-display: 32px;
+  --leading-display: 1.03;
+  --tracking-display: -0.32px;
+
+  /* Typography — Weights */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-unit: 4px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-36: 36px;
+  --spacing-48: 48px;
+  --spacing-60: 60px;
+
+  /* Layout */
+  --page-max-width: 1440px;
+  --section-gap: 32px;
+  --card-padding: 12px;
+  --element-gap: 8px;
+
+  /* Border Radius */
+  --radius-sm: 3px;
+  --radius-md: 7px;
+  --radius-3xl: 28.6839px;
+  --radius-3xl-2: 44.129px;
+  --radius-full: 64px;
+
+  /* Named Radii */
+  --radius-tags: 3px;
+  --radius-cards: 3px;
+  --radius-inputs: 7px;
+  --radius-buttons: 3px;
+  --radius-navpills: 44px;
+
+  /* Surfaces */
+  --surface-paper-white: #ffffff;
+  --surface-ash-gray: #f2f2f2;
+  --surface-mist-gray: #e7e7e7;
+  --surface-iris-violet: #7373ff;
+  --surface-obsidian: #000000;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-abcmonumentgrotesk);
+  background-color: var(--surface-paper-white);
+  color: var(--color-obsidian);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.4;
+  overflow-x: hidden;
+  background-color: var(--color-paper-white);
+}
+
+/* Constructivist BroadSheet Grid & Container */
+.container {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+}
+
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Hairline borders */
+.border-b-hairline {
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.border-t-hairline {
+  border-top: 1px solid var(--color-obsidian);
+}
+
+.border-hairline {
+  border: 1px solid var(--color-obsidian);
+}
+
+.border-violet-hairline {
+  border: 1px solid var(--color-iris-violet);
+}
+
+/* Typography Helpers */
+.font-grotesk {
+  font-family: var(--font-abcmonumentgrotesk);
+}
+
+.font-serif {
+  font-family: var(--font-bradfordll);
+}
+
+.text-display {
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.text-heading-lg {
+  font-size: var(--text-heading-lg);
+  line-height: var(--leading-heading-lg);
+}
+
+.text-heading {
+  font-size: var(--text-heading);
+  line-height: var(--leading-heading);
+}
+
+.text-heading-sm {
+  font-size: var(--text-heading-sm);
+  line-height: var(--leading-heading-sm);
+}
+
+.text-subheading {
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+}
+
+.text-body-lg {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+}
+
+.text-body-sm {
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-body-sm);
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  letter-spacing: var(--tracking-caption);
+}
+
+/* Strict No-Shadow rule per Design.md */
+button, input, select, textarea, div, a, article, section {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-radius: var(--radius-buttons);
+  text-align: center;
+  white-space: nowrap;
+  gap: var(--spacing-8);
+  line-height: 1;
+}
+
+/* Violet Outlined Action Button per Design.md:
+   Transparent fill with 1-2px Iris Violet (#7373ff) border, Iris Violet text,
+   ABCMonumentGrotesk 14-16px weight 700. 3px corner radius, 5-7px vertical padding, 11-12px horizontal padding.
+   Used for nav items, tag pills, and program links. */
+.btn-violet-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-iris-violet);
+  color: var(--color-iris-violet);
+  padding: 6px 12px;
+  border-radius: var(--radius-buttons);
+}
+
+.btn-violet-outline:hover,
+.btn-violet-outline:focus-visible {
+  background-color: var(--color-iris-violet);
+  color: var(--color-paper-white);
+}
+
+/* Neutral Outlined Button per Design.md:
+   White fill with 1px Obsidian border, black text, 3px radius, 3-6px vertical and 5-11px horizontal padding. */
+.btn-neutral-outline {
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  color: var(--color-obsidian);
+  padding: 5px 11px;
+  border-radius: var(--radius-buttons);
+}
+
+.btn-neutral-outline:hover,
+.btn-neutral-outline:focus-visible {
+  background-color: var(--color-ash-gray);
+}
+
+/* Pill Nav Button per Design.md:
+   White fill, 1px Obsidian border, 44px corner radius (fully rounded), ABCMonumentGrotesk 14px */
+.btn-pill-nav {
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  color: var(--color-obsidian);
+  border-radius: var(--radius-navpills);
+  padding: 6px 16px;
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+}
+
+.btn-pill-nav:hover {
+  background-color: var(--color-ash-gray);
+}
+
+.btn-pill-nav.active {
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+  border-color: var(--color-obsidian);
+}
+
+/* Dark Pill Button */
+.btn-pill-dark {
+  background-color: var(--color-obsidian);
+  border: 1px solid var(--color-iris-violet);
+  color: var(--color-iris-violet);
+  border-radius: var(--radius-navpills);
+  padding: 6px 16px;
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.btn-pill-dark:hover {
+  background-color: var(--color-deep-iris);
+  color: var(--color-paper-white);
+}
+
+/* Program Tag Pill per Design.md:
+   White fill, 1px Obsidian border, 3px radius, ABCMonumentGrotesk 12-14px weight 700 uppercase.
+   Compact 2-3px vertical padding, 11-12px horizontal. */
+.tag-pill {
+  display: inline-block;
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  color: var(--color-obsidian);
+  border-radius: var(--radius-tags);
+  padding: 3px 11px;
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caption);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tag-pill:hover,
+.tag-pill.active {
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+}
+
+.tag-pill-violet {
+  border-color: var(--color-iris-violet);
+  color: var(--color-iris-violet);
+}
+
+.tag-pill-violet:hover,
+.tag-pill-violet.active {
+  background-color: var(--color-iris-violet);
+  color: var(--color-paper-white);
+}
+
+/* Inputs per Design.md:
+   White fill, 1px Obsidian border, 7px corner radius, ABCMonumentGrotesk 16px placeholder. 8-10px padding */
+.input-text {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: var(--text-body-sm);
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-inputs);
+  padding: 8px 12px;
+  color: var(--color-obsidian);
+  outline: none;
+  width: 100%;
+}
+
+.input-text:focus {
+  border-color: var(--color-iris-violet);
+}
+
+/* ==========================================================================
+   Top Header & Announcement Bar
+   ========================================================================== */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: var(--color-paper-white);
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px var(--spacing-24);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  gap: var(--spacing-12);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ticker-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-iris-violet);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+/* Language Switcher pill group per Design.md:
+   Compact group of 3 outlined buttons (EN, DE, Easy Language), 3px radius, 1px Obsidian border, ABCMonumentGrotesk 12px */
+.lang-switcher {
+  display: inline-flex;
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  overflow: hidden;
+  background-color: var(--color-paper-white);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 4px 8px;
+  font-size: var(--text-caption);
+  font-family: var(--font-abcmonumentgrotesk);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  border-right: 1px solid var(--color-obsidian);
+  color: var(--color-obsidian);
+  transition: background-color 0.15s ease;
+}
+
+.lang-btn:last-child {
+  border-right: none;
+}
+
+.lang-btn:hover {
+  background-color: var(--color-ash-gray);
+}
+
+.lang-btn.active {
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+}
+
+/* ==========================================================================
+   Overlapping Side Nav Panel per Design.md:
+   Dark Obsidian (#000000) panel that overlaps the left edge of the page.
+   Contains nav links in ABCMonumentGrotesk 16-17px, white text, with hairline 1px white dividers.
+   Secondary links (Visit, Contact, Press) sit in a white sub-bar at top with black 1px borders.
+   ========================================================================== */
+.side-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.side-nav-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.side-nav-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  max-width: 90vw;
+  height: 100vh;
+  background-color: var(--surface-obsidian);
+  color: var(--color-paper-white);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border-right: 1px solid var(--color-iris-violet);
+  padding: var(--spacing-12);
+  gap: var(--spacing-12);
+  overflow-y: auto;
+}
+
+.side-nav-panel.open {
+  transform: translateX(0);
+}
+
+.side-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 8px 4px;
+}
+
+.side-nav-title {
+  color: var(--color-iris-violet);
+  font-size: var(--text-subheading);
+  font-weight: var(--font-weight-bold);
+}
+
+.side-nav-close {
+  background: transparent;
+  border: 1px solid var(--color-paper-white);
+  color: var(--color-paper-white);
+  border-radius: var(--radius-buttons);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.side-nav-close:hover {
+  background-color: var(--color-paper-white);
+  color: var(--color-obsidian);
+}
+
+/* Sub-bar (Visit, Contact, Press) in white with black border */
+.side-nav-subbar {
+  display: flex;
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  overflow: hidden;
+}
+
+.side-nav-sublink {
+  flex: 1;
+  text-align: center;
+  padding: 6px 4px;
+  font-size: var(--text-body-sm);
+  color: var(--color-obsidian);
+  font-weight: var(--font-weight-bold);
+  border-right: 1px solid var(--color-obsidian);
+}
+
+.side-nav-sublink:last-child {
+  border-right: none;
+}
+
+.side-nav-sublink:hover {
+  background-color: var(--color-ash-gray);
+}
+
+/* White Rectangular Navigation Card */
+.side-nav-card {
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px var(--spacing-8);
+  color: var(--color-obsidian);
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-regular);
+  border-bottom: 1px solid var(--color-ash-gray);
+}
+
+.side-nav-item:last-child {
+  border-bottom: none;
+}
+
+.side-nav-item:hover {
+  background-color: var(--color-ash-gray);
+  color: var(--color-iris-violet);
+  padding-left: 12px;
+}
+
+.side-nav-item-badge {
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-iris-violet);
+}
+
+/* Utility buttons in side nav */
+.side-nav-actions {
+  display: flex;
+  gap: var(--spacing-8);
+}
+
+.side-nav-search {
+  position: relative;
+  display: flex;
+}
+
+.side-nav-search input {
+  padding-right: 36px;
+}
+
+.side-nav-search button {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-obsidian);
+}
+
+/* Side nav footer */
+.side-nav-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  padding-top: var(--spacing-12);
+  border-top: 1px solid #222222;
+}
+
+.side-nav-meta {
+  font-size: var(--text-caption);
+  color: #888888;
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Hero Section — Violet Skies & Monumental Type Shapes
+   ========================================================================== */
+.hero-section {
+  background-color: var(--surface-iris-violet);
+  color: var(--color-obsidian);
+  position: relative;
+  overflow: hidden;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-obsidian);
+  padding-top: var(--spacing-24);
+}
+
+.hero-container {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-24);
+  width: 100%;
+  position: relative;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-start;
+  gap: var(--spacing-24);
+}
+
+/* Top-Right Stacked Hero Headline per Screenshot */
+.hero-date-block {
+  text-align: right;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-date-title {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: 0.95;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-obsidian);
+  letter-spacing: -1.5px;
+  margin-bottom: var(--spacing-12);
+}
+
+.hero-date-range {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: clamp(24px, 3.5vw, 42px);
+  line-height: 1.02;
+  font-weight: var(--font-weight-regular);
+  color: var(--color-obsidian);
+  letter-spacing: -0.8px;
+}
+
+/* Constructivist Architectural Shape Stack */
+.hero-shapes-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Geometric Constructivist Centerpiece */
+.hero-constructivist-composition {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  z-index: 6;
+}
+
+/* Stepped architectural block matching screenshot */
+.stepped-polygon-box {
+  background-color: var(--surface-obsidian);
+  position: relative;
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-36) var(--spacing-48);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 380px;
+  width: 82%;
+  /* Constructivist step-down curve on right */
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+}
+
+.stepped-polygon-box::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 20%;
+  width: 160px;
+  height: 30px;
+  background-color: var(--surface-obsidian);
+  border-top: 1px solid var(--color-obsidian);
+}
+
+.numeral-step-top {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-iris-violet);
+  margin-left: 24%;
+  line-height: 1;
+}
+
+.hero-brand-headline {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: clamp(28px, 4.5vw, 54px);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-iris-violet);
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  margin: var(--spacing-12) 0;
+}
+
+.numeral-step-bottom {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-iris-violet);
+  margin-left: 24%;
+  line-height: 1;
+}
+
+.hero-archive-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  padding: 4px 10px;
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  margin-top: var(--spacing-12);
+  width: fit-content;
+  pointer-events: auto;
+}
+
+.hero-archive-badge:hover {
+  background-color: var(--color-ash-gray);
+}
+
+/* Horizontal Floating Pill Navigation Bar per Screenshot */
+.hero-pill-nav-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 0 var(--spacing-24) var(--spacing-24);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  z-index: 20;
+}
+
+.hero-pill-nav-container::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-pill-bar {
+  display: inline-flex;
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-navpills);
+  padding: 6px 12px;
+  gap: var(--spacing-8);
+  white-space: nowrap;
+}
+
+.hero-pill-item {
+  color: var(--color-obsidian);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+  padding: 6px 14px;
+  border-radius: var(--radius-navpills);
+  transition: all 0.15s ease;
+}
+
+.hero-pill-item:hover {
+  background-color: var(--color-ash-gray);
+}
+
+.hero-pill-item.primary-pill {
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+  font-weight: var(--font-weight-bold);
+}
+
+.hero-pill-item.primary-pill:hover {
+  background-color: var(--color-deep-iris);
+}
+
+/* ==========================================================================
+   Editorial Curatorial / About Section
+   ========================================================================== */
+.about-section {
+  background-color: var(--surface-paper-white);
+  padding: var(--spacing-48) 0;
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.about-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-24);
+  border-bottom: 1px solid var(--color-obsidian);
+  padding-bottom: var(--spacing-12);
+}
+
+.about-label {
+  font-size: var(--text-subheading);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.about-curator-tag {
+  font-size: var(--text-body-sm);
+  color: var(--color-obsidian);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--spacing-48);
+  align-items: start;
+}
+
+.about-lead-text {
+  font-family: var(--font-bradfordll);
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.25;
+  color: var(--color-obsidian);
+  margin-bottom: var(--spacing-24);
+}
+
+.about-body-text {
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-body-lg);
+  line-height: 1.45;
+  color: #222222;
+  margin-bottom: var(--spacing-24);
+}
+
+.curatorial-quote {
+  border-left: 2px solid var(--color-iris-violet);
+  padding-left: var(--spacing-16, 16px);
+  margin: var(--spacing-24) 0;
+  font-style: italic;
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-subheading);
+  line-height: 1.35;
+}
+
+.about-sidebar {
+  background-color: var(--surface-ash-gray);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+}
+
+.about-sidebar-title {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-12);
+  border-bottom: 1px solid var(--color-obsidian);
+  padding-bottom: var(--spacing-8);
+}
+
+.curatorial-team-list {
+  list-style: none;
+  margin-bottom: var(--spacing-24);
+}
+
+.curatorial-team-list li {
+  padding: 6px 0;
+  font-size: var(--text-body-sm);
+  border-bottom: 1px solid var(--color-mist-gray);
+  display: flex;
+  justify-content: space-between;
+}
+
+.curatorial-team-list li:last-child {
+  border-bottom: none;
+}
+
+.curatorial-team-list strong {
+  color: var(--color-obsidian);
+}
+
+/* Curatorial Framework Cards */
+.frameworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-12);
+  margin-top: var(--spacing-32);
+}
+
+.framework-card {
+  background-color: var(--surface-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-16, 16px);
+  transition: background-color 0.15s ease;
+}
+
+.framework-card:hover {
+  background-color: var(--surface-ash-gray);
+}
+
+.framework-number {
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-iris-violet);
+  margin-bottom: var(--spacing-4);
+  letter-spacing: 0.5px;
+}
+
+.framework-title {
+  font-size: var(--text-subheading);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-8);
+  line-height: 1.15;
+}
+
+.framework-desc {
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-body-sm);
+  line-height: 1.35;
+  color: #333333;
+}
+
+/* ==========================================================================
+   Biennale Program Leaflet & Event Calendar
+   ========================================================================== */
+.program-section {
+  background-color: var(--surface-paper-white);
+  padding: var(--spacing-48) 0;
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-24);
+  border-bottom: 1px solid var(--color-obsidian);
+  padding-bottom: var(--spacing-16, 16px);
+}
+
+.section-head-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-8);
+}
+
+.section-title {
+  font-size: var(--text-heading-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: var(--text-body-sm);
+  color: #555555;
+}
+
+/* Filter controls bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  background-color: var(--surface-ash-gray);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-12);
+  margin-bottom: var(--spacing-24);
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.filter-label {
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  margin-right: var(--spacing-4);
+  text-transform: uppercase;
+}
+
+/* Program Event Cards Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-12);
+}
+
+/* Event Card per Design.md:
+   White surface, 1px Obsidian border, 3-7px radius, 12px padding.
+   Date row in 12px uppercase, title in ABCMonumentGrotesk 19-25px, venue line in 12px.
+   Some event cards have a dark Obsidian variant with white text and Iris Violet accents. */
+.event-card {
+  background-color: var(--surface-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 230px;
+  position: relative;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.event-card:hover {
+  background-color: var(--surface-ash-gray);
+}
+
+/* Dark Obsidian Variant Card for Constructivist Rhythm */
+.event-card.event-card-dark {
+  background-color: var(--surface-obsidian);
+  color: var(--color-paper-white);
+  border-color: var(--color-obsidian);
+}
+
+.event-card.event-card-dark:hover {
+  background-color: #111111;
+}
+
+.event-card.event-card-dark .event-title {
+  color: var(--color-paper-white);
+}
+
+.event-card.event-card-dark .event-venue-line {
+  color: #cccccc;
+}
+
+.event-card.event-card-dark .tag-pill {
+  background-color: transparent;
+  border-color: var(--color-iris-violet);
+  color: var(--color-iris-violet);
+}
+
+.event-card.event-card-dark .tag-pill:hover {
+  background-color: var(--color-iris-violet);
+  color: var(--color-paper-white);
+}
+
+.event-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-8);
+}
+
+.event-date-row {
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caption);
+}
+
+.event-title {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-heading-sm);
+  margin-bottom: var(--spacing-8);
+  letter-spacing: -0.3px;
+}
+
+.event-venue-line {
+  font-size: var(--text-caption);
+  color: #444444;
+  margin-bottom: var(--spacing-12);
+  line-height: 1.3;
+}
+
+.event-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8);
+  margin-top: auto;
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--color-mist-gray);
+}
+
+.event-card.event-card-dark .event-card-bottom {
+  border-top-color: #222222;
+}
+
+.event-actions {
+  display: flex;
+  gap: var(--spacing-4);
+}
+
+/* ==========================================================================
+   Participating Artists Index
+   ========================================================================== */
+.artists-section {
+  background-color: var(--surface-ash-gray);
+  padding: var(--spacing-48) 0;
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.artists-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-24);
+}
+
+.artists-search-wrap {
+  display: flex;
+  max-width: 480px;
+}
+
+.alphabet-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.alpha-btn {
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  padding: 3px 8px;
+  font-size: var(--text-caption);
+  font-family: var(--font-abcmonumentgrotesk);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  min-width: 26px;
+  text-align: center;
+}
+
+.alpha-btn:hover,
+.alpha-btn.active {
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+}
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-8);
+}
+
+.artist-card {
+  background-color: var(--surface-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--card-padding);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+}
+
+.artist-card:hover {
+  border-color: var(--color-iris-violet);
+  background-color: #fafaff;
+  transform: translateY(-2px);
+}
+
+.artist-name {
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+  margin-bottom: var(--spacing-4);
+}
+
+.artist-origin {
+  font-size: var(--text-caption);
+  color: #666666;
+  margin-bottom: var(--spacing-8);
+}
+
+.artist-artwork {
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-body-sm);
+  font-style: italic;
+  color: var(--color-obsidian);
+  line-height: 1.25;
+}
+
+.artist-venue-tag {
+  align-self: flex-start;
+  margin-top: var(--spacing-8);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-iris-violet);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Venue Map & Guide — Constructivist Violet Canvas
+   ========================================================================== */
+.venues-section {
+  background-color: var(--surface-paper-white);
+  padding: var(--spacing-48) 0;
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+/* Map Section per Prompt Guide:
+   "Iris Violet (#7373ff) full-bleed background. White diamond-shaped markers (14px, rotated 45°)
+   labeled A through F in ABCMonumentGrotesk 14px weight 700. Street network rendered as 1px #23234d lines" */
+.map-canvas-container {
+  background-color: var(--surface-iris-violet);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  position: relative;
+  overflow: hidden;
+  height: 440px;
+  margin-bottom: var(--spacing-32);
+}
+
+.map-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.map-marker {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center;
+}
+
+.map-marker:hover,
+.map-marker.active {
+  transform: scale(1.3);
+}
+
+.map-marker-shape {
+  fill: var(--color-paper-white);
+  stroke: var(--color-obsidian);
+  stroke-width: 1.5px;
+}
+
+.map-marker-text {
+  font-family: var(--font-abcmonumentgrotesk);
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--color-obsidian);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.map-legend-overlay {
+  position: absolute;
+  bottom: var(--spacing-12);
+  left: var(--spacing-12);
+  background-color: var(--color-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  padding: 6px 12px;
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+/* Venue Cards Directory per Design.md:
+   White surface, 1px Obsidian border, 7px radius, 12-16px padding.
+   Letter label (A, B, C) at top, venue name in ABCMonumentGrotesk 19-25px, action links */
+.venues-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-12);
+}
+
+.venue-card {
+  background-color: var(--surface-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-inputs);
+  padding: var(--spacing-16, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  transition: all 0.15s ease;
+}
+
+.venue-card:hover,
+.venue-card.highlighted {
+  border-color: var(--color-iris-violet);
+  background-color: #fafaff;
+}
+
+.venue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-8);
+}
+
+.venue-letter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-buttons);
+}
+
+.venue-district {
+  font-size: var(--text-caption);
+  text-transform: uppercase;
+  color: #666666;
+  font-weight: var(--font-weight-bold);
+}
+
+.venue-name {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+  margin-bottom: var(--spacing-8);
+}
+
+.venue-address {
+  font-size: var(--text-body-sm);
+  color: #333333;
+  margin-bottom: var(--spacing-4);
+}
+
+.venue-details {
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-body-sm);
+  color: #555555;
+  margin-bottom: var(--spacing-12);
+  line-height: 1.35;
+}
+
+.venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  margin-top: auto;
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--color-mist-gray);
+}
+
+/* ==========================================================================
+   Publications & Editions Store
+   ========================================================================== */
+.publications-section {
+  background-color: var(--surface-ash-gray);
+  padding: var(--spacing-48) 0;
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-16, 16px);
+}
+
+.publication-card {
+  background-color: var(--surface-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-16, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.publication-cover-mock {
+  height: 220px;
+  background-color: var(--color-deep-iris);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  margin-bottom: var(--spacing-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-16, 16px);
+  color: var(--color-paper-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.pub-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-iris-violet);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pub-title-mock {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-paper-white);
+}
+
+.pub-author-mock {
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.pub-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--color-ash-gray);
+}
+
+.pub-price {
+  font-size: var(--text-subheading);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   Admission, Tickets & Practical Visitor Guide
+   ========================================================================== */
+.tickets-section {
+  background-color: var(--surface-paper-white);
+  padding: var(--spacing-48) 0;
+  border-bottom: 1px solid var(--color-obsidian);
+}
+
+.tickets-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-12);
+  margin-bottom: var(--spacing-32);
+}
+
+.ticket-tier-card {
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--surface-paper-white);
+}
+
+.ticket-tier-card.featured {
+  border: 2px solid var(--color-iris-violet);
+  background-color: #fafaff;
+}
+
+.ticket-name {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+}
+
+.ticket-price {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-obsidian);
+  margin-bottom: var(--spacing-12);
+  line-height: 1;
+}
+
+.ticket-price small {
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+  color: #666666;
+}
+
+.ticket-features {
+  list-style: none;
+  margin-bottom: var(--spacing-24);
+}
+
+.ticket-features li {
+  padding: 6px 0;
+  font-size: var(--text-body-sm);
+  border-bottom: 1px solid var(--color-mist-gray);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.ticket-features li:last-child {
+  border-bottom: none;
+}
+
+/* Accessibility & Inclusivity Callout */
+.accessibility-box {
+  background-color: var(--surface-ash-gray);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-24);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-24);
+}
+
+.access-title {
+  font-size: var(--text-subheading);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-8);
+}
+
+.access-text {
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-body-sm);
+  line-height: 1.45;
+  color: #333333;
+}
+
+/* ==========================================================================
+   Colophon & Footer Broadsheet
+   ========================================================================== */
+.footer-colophon {
+  background-color: var(--surface-obsidian);
+  color: var(--color-paper-white);
+  padding: var(--spacing-60) 0 var(--spacing-36);
+  border-top: 1px solid var(--color-obsidian);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--spacing-32);
+  margin-bottom: var(--spacing-48);
+}
+
+.footer-brand-title {
+  font-size: var(--text-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-iris-violet);
+  margin-bottom: var(--spacing-12);
+  line-height: 1.1;
+}
+
+.footer-brand-desc {
+  font-family: var(--font-bradfordll);
+  font-size: var(--text-body-sm);
+  color: #aaaaaa;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-16, 16px);
+  max-width: 380px;
+}
+
+.footer-col-title {
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-paper-white);
+  margin-bottom: var(--spacing-12);
+  border-bottom: 1px solid #333333;
+  padding-bottom: var(--spacing-4);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  padding: 4px 0;
+}
+
+.footer-links a {
+  color: #cccccc;
+  font-size: var(--text-body-sm);
+}
+
+.footer-links a:hover {
+  color: var(--color-iris-violet);
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+}
+
+.footer-bottom {
+  border-top: 1px solid #222222;
+  padding-top: var(--spacing-24);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacing-12);
+  font-size: var(--text-caption);
+  color: #777777;
+}
+
+/* ==========================================================================
+   Modals (Ticket Booking, Artist Dossier, Archival View)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-16, 16px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog {
+  background-color: var(--surface-paper-white);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-16, 16px);
+  border-bottom: 1px solid var(--color-obsidian);
+  background-color: var(--surface-ash-gray);
+}
+
+.modal-title {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+}
+
+.modal-body {
+  padding: var(--spacing-24);
+}
+
+.modal-footer {
+  padding: var(--spacing-16, 16px);
+  border-top: 1px solid var(--color-obsidian);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-8);
+  background-color: var(--surface-ash-gray);
+}
+
+/* Ticket form inside modal */
+.ticket-form-row {
+  margin-bottom: var(--spacing-16, 16px);
+}
+
+.ticket-form-label {
+  display: block;
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-4);
+}
+
+.ticket-summary-box {
+  background-color: var(--surface-ash-gray);
+  border: 1px solid var(--color-obsidian);
+  border-radius: var(--radius-buttons);
+  padding: var(--spacing-12);
+  margin-top: var(--spacing-16, 16px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Toast message notification */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+  border: 1px solid var(--color-iris-violet);
+  border-radius: var(--radius-buttons);
+  padding: 12px 18px;
+  font-size: var(--text-body-sm);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .events-grid,
+  .venues-grid,
+  .publications-grid,
+  .tickets-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artists-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-date-block {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .stepped-polygon-box {
+    width: 100%;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    padding: var(--spacing-24);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accessibility-box {
+    grid-template-columns: 1fr;
+  }
+
+  .events-grid,
+  .venues-grid,
+  .publications-grid,
+  .tickets-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-center {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .artists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 var(--spacing-12);
+  }
+
+  .top-bar-inner {
+    padding: 8px var(--spacing-12);
+  }
+}
